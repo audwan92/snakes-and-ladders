@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snakes and Ladders</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section id="setup-screen" class="setup-screen">
+      <div class="skyline" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="brand-panel">
+        <p class="eyebrow">Digital board game</p>
+        <h1>Snakes and Ladders</h1>
+        <p class="intro">Pick your players, choose the rule style, and race to square 100.</p>
+      </div>
+
+      <form id="setup-form" class="setup-form">
+        <div class="player-row">
+          <div class="form-row">
+            <label for="lobby-name">Your name</label>
+            <input id="lobby-name" name="lobby-name" type="text" maxlength="18" value="Player">
+          </div>
+
+          <div class="form-row">
+            <label for="lobby-color">Color</label>
+            <input id="lobby-color" class="color-select" name="lobby-color" type="color" value="#E53935">
+          </div>
+        </div>
+
+        <div class="option-grid">
+          <label class="switch-line">
+            <input id="extra-turn" type="checkbox">
+            <span>Extra turn on rolling 6</span>
+          </label>
+          <label class="switch-line">
+            <input id="start-outside" type="checkbox">
+            <span>Roll 1 or 6 to enter board</span>
+          </label>
+        </div>
+
+        <div id="lobby-list" class="lobby-list" aria-live="polite"></div>
+
+        <button id="ready-button" class="primary-button" type="submit">Ready</button>
+      </form>
+    </section>
+
+    <section id="game-screen" class="game-screen hidden">
+      <div class="game-layout">
+        <div class="board-wrap">
+          <div id="board" class="board" aria-label="Snakes and ladders board">
+            <svg id="path-layer" class="path-layer" viewBox="0 0 1000 1000" aria-hidden="true"></svg>
+
+            <div id="player-list" class="player-list"></div>
+
+            <button id="dice" class="dice center-dice hidden" type="button" aria-label="Dice result">
+              <span id="dice-value">1</span>
+            </button>
+
+            <div id="event-toast" class="event-toast hidden" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="win-screen" class="win-screen hidden">
+      <div class="winner-token" id="winner-token">1</div>
+      <p class="eyebrow">Game complete</p>
+      <h2 id="winner-title">Player wins!</h2>
+      <p id="winner-message" class="intro"></p>
+      <div class="control-row centered">
+        <button id="play-again-button" class="primary-button" type="button">Restart Game</button>
+        <button id="win-menu-button" class="secondary-button" type="button">Back to Menu</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
