@@ -24,3 +24,4 @@ Notes:
 - This PHP version uses polling, so it works on ordinary PHP shared hosting.
 - The local Node server (`server.js`) can still be used for local development.
 - Game state resets if `api/state.json` is deleted.
+demo :https://snake.audwan.info/
