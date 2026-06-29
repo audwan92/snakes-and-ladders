@@ -1,0 +1,3 @@
+<FilesMatch "^(state\.json|state\.lock)$">
+  Require all denied
+</FilesMatch>
